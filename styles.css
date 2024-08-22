@@ -10,7 +10,7 @@ body {
 /* Bookshelf menu */
 .bookshelf-menu {
     width: 100%;
-    background-color: #a0522d; /* Cor da estante */
+    background-color: #31132D; /* Cor da estante */
     padding: 20px 0;
     text-align: center;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
@@ -34,7 +34,7 @@ body {
     transform: rotate(-5deg); /* Efeito inclinado para lembrar livros na estante */
     width: 60px; /* Diminuído */
     height: 90px; /* Diminuído */
-    background-color: #8b4513;
+    background-color: #F2B705;
     border-radius: 5px;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
     transition: all 0.3s ease;
@@ -53,7 +53,7 @@ body {
     left: 0;
     width: 6px; /* Diminuído */
     height: 60%; /* Diminuído */
-    background-color: #6b3d1d; /* Cor da lombada do livro */
+    background-color: #DF0774; /* Cor da lombada do livro */
     box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.3);
 }
 
@@ -80,7 +80,7 @@ body {
 }
 
 .bookshelf-menu ul li.book a:hover {
-    background-color: #cd853f; /* Cor da capa ao passar o mouse */
+    background-color: #DF0774; /* Cor da capa ao passar o mouse */
     border: none; /* Remove bordas indesejadas */
 }
 
@@ -283,7 +283,7 @@ body {
     right: 20px;
     width: 60px;
     height: 60px;
-    background-color: #8b4513;
+    background-color: #F2CB05;
     color: white;
     font-size: 24px;
     border: none;
@@ -294,7 +294,7 @@ body {
 }
 
 .scroll-to-top:hover {
-    background-color: #cd853f;
+    background-color: #DF0774;
 }
 
 .scroll-to-top i {
@@ -310,7 +310,7 @@ body::after {
 /* Footer Styles */
 /* Footer Styles */
 .footer {
-    background-color: #333;
+    background-color: #31132D;
     color: #fff;
     text-align: center;
     padding: 10px 0;
@@ -322,7 +322,7 @@ body::after {
 
 
 .footer a {
-    color: #f2ca52; /* Cor para links */
+    color: #F2CB05; /* Cor para links */
     text-decoration: none;
 }
 
