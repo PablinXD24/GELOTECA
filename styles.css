@@ -84,11 +84,6 @@ body {
     border: none; /* Remove bordas indesejadas */
 }
 
-/* Animação ao clicar */
-.bookshelf-menu ul li.book:active {
-    transform: translateY(-10px) rotate(-5deg); /* Simula a retirada do livro da estante */
-}
-
 /* Slideshow and sections styles */
 .slideshow-container {
     position: relative;
@@ -155,16 +150,6 @@ body {
     background-color: #717171;
 }
 
-.fade {
-    animation-name: fade;
-    animation-duration: 1.5s;
-}
-
-@keyframes fade {
-    from {opacity: 0.4} 
-    to {opacity: 1}
-}
-
 /* Title styles */
 .title-container {
     text-align: center;
@@ -198,58 +183,61 @@ body {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     margin: 10px 0;
     box-sizing: border-box; /* Garante que o padding não afete o tamanho total */
+    opacity: 0; /* Inicialmente oculto para a animação */
+    transition: opacity 1.5s ease-in-out; /* Transição suave para a animação */
+    animation: fade-in 1.5s ease-in-out forwards; /* Animação para aparecer gradualmente */
 }
 
+/* Layout específico das abas */
 .home-section, .about-section {
     width: 48%; /* Ajusta a largura para estar alinhado com os retângulos abaixo */
     height: 150px; /* Ajustado */
+    margin: 10px 1%; /* Margem ajustada para alinhamento */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #e0e0e0; /* Cor de fundo das seções */
+}
+
+.home-section h2, .about-section h2 {
+    margin: 0;
+    padding: 10px;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.home-section p, .about-section p {
+    margin: 0;
+    padding: 10px;
+    font-size: 1em;
+    color: #666;
+    text-align: center;
 }
 
 .services-section, .contact-section {
     width: 100%; /* Ajusta a largura para preencher a tela */
     height: 100px; /* Ajustado */
     margin-top: 10px; /* Ajustado */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e0e0e0; /* Cor de fundo das seções */
 }
 
-@media (max-width: 768px) {
-    .bookshelf-menu ul li.book {
-        width: 50px; /* Ajustado para dispositivos móveis */
-        height: 75px; /* Ajustado para dispositivos móveis */
-    }
+.services-section h2, .contact-section h2 {
+    margin: 0;
+    padding: 10px;
+    font-size: 1.5em;
+    color: #333;
+}
 
-    .bookshelf-menu ul li.book a {
-        font-size: 10px; /* Ajustado para dispositivos móveis */
-    }
-
-    .bookshelf-menu ul li.book a i {
-        font-size: 14px; /* Ajustado para dispositivos móveis */
-    }
-
-    .slideshow-container {
-        height: 50vh; /* Ajuste para a altura dos slides em dispositivos móveis */
-    }
-
-    .title-container {
-        padding: 20px; /* Ajustado */
-    }
-
-    .title {
-        font-size: 1.5em; /* Ajustado para dispositivos móveis */
-    }
-
-    .section {
-        font-size: 16px; /* Ajustado */
-        padding: 10px; /* Ajustado */
-    }
-
-    .home-section, .about-section {
-        width: 100%; /* Ajustado para telas menores */
-        height: 120px; /* Ajustado */
-    }
-
-    .services-section, .contact-section {
-        height: 80px; /* Ajustado */
-    }
+.services-section p, .contact-section p {
+    margin: 0;
+    padding: 10px;
+    font-size: 1em;
+    color: #666;
+    text-align: center;
 }
 
 /* Scroll animation */
@@ -263,17 +251,12 @@ body {
 .scroll-animation span {
     display: inline-block;
     padding-right: 50px;
-    animation: typing 3s steps(30, end), blink 0.75s step-end infinite;
+    animation: fade-in 1.5s ease-out forwards;
 }
 
-@keyframes typing {
-    from { width: 0; }
-    to { width: 100%; }
-}
-
-@keyframes blink {
-    from, to { border-color: transparent; }
-    50% { border-color: black; }
+@keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 /* Scroll to Top Button */
@@ -307,7 +290,7 @@ body::after {
     display: block;
     height: 60px; /* Altura do botão */
 }
-/* Footer Styles */
+
 /* Footer Styles */
 .footer {
     background-color: #31132D;
@@ -320,7 +303,6 @@ body::after {
     margin-top: 20px; /* Espaçamento acima do rodapé para garantir que apareça após rolar */
 }
 
-
 .footer a {
     color: #F2CB05; /* Cor para links */
     text-decoration: none;
@@ -328,4 +310,56 @@ body::after {
 
 .footer a:hover {
     text-decoration: underline;
+}
+/* Logo no canto esquerdo do bookshelf menu */
+.bookshelf-menu .logo {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    width: 150px; /* Ajuste conforme necessário */
+    height: auto;
+}
+
+.bookshelf-menu .logo img {
+    width: 100%;
+    height: auto;
+}
+
+/* Estilos para o carrossel de logos */
+.logo-carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background-color: #F2CB05; /* Cor de fundo do carrossel */
+    padding: 20px 0;
+}
+
+.logo-carousel-inner {
+    display: flex;
+    width: 400%; /* Ajuste para a quantidade de logos e espaço entre eles */
+    animation: slide 20s linear infinite;
+}
+
+.logo-item {
+    flex: 1 0 25%; /* Ajusta o item para ocupar 25% da largura do carrossel */
+    box-sizing: border-box; /* Inclui padding e border no tamanho total */
+    padding: 0 10px; /* Espaçamento entre logos */
+}
+
+.logo-carousel img {
+    width: 10%;
+    height: auto;
+    display: block;
+}
+
+/* Animação do carrossel infinito */
+@keyframes slide {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } /* Ajustado para o carrossel */
+}
+
+/* Estilo do conteúdo abaixo do footer (para criar espaço para o carrossel) */
+.footer + .logo-carousel {
+    margin-top: 20px; /* Espaçamento entre o footer e o carrossel */
 }
