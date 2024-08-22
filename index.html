@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeloTeCa</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <!-- Bookshelf Menu -->
+    <div class="bookshelf-menu">
+        <ul>
+            <li class="book"><a href="#home"><i class="fas fa-book"></i> Home</a></li>
+            <li class="book"><a href="#about"><i class="fas fa-book"></i> About</a></li>
+            <li class="book"><a href="#services"><i class="fas fa-book"></i> Services</a></li>
+            <li class="book"><a href="#contact"><i class="fas fa-book"></i> Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Title -->
+    <div class="title-container">
+        <h1 class="title">GELOTECA</h1>
+    </div>
+
+    <!-- Slideshow -->
+    <div class="slideshow-container">
+        <div class="slide fade">
+            <img src="slide1.jpg" alt="Slide 1">
+        </div>
+        <div class="slide fade">
+            <img src="slide2.jpg" alt="Slide 2">
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        <div class="dots-container">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+        </div>
+    </div>
+
+    <!-- Sections -->
+    <div class="sections-container">
+        <div class="section-row">
+            <div class="section home-section" id="home">
+                <div class="scroll-animation"><span>Home Content</span></div>
+            </div>
+            <div class="section about-section" id="about">
+                <div class="scroll-animation"><span>About Content</span></div>
+            </div>
+        </div>
+        <div class="section-row">
+            <div class="section services-section" id="services">
+                Services Content
+            </div>
+            <div class="section contact-section" id="contact">
+                Contact Content
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" onclick="scrollToTop()">
+        <i class="fas fa-book"></i>
+    </button>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 GeloTeCa. Todos os direitos reservados. | <a href="#home">Home</a> | <a href="#about">About</a> | <a href="#services">Services</a> | <a href="#contact">Contact</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
