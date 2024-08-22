@@ -15,7 +15,7 @@ function showSlides() {
     }
     slides[slideIndex - 1].style.display = "block";
     dots[slideIndex - 1].className += " active";
-    setTimeout(showSlides, 2000); // Muda slide a cada 2 segundos
+    setTimeout(showSlides, 4000); // Muda slide a cada 2 segundos
 }
 
 function plusSlides(n) {
