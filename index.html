@@ -12,6 +12,7 @@
 
     <!-- Bookshelf Menu -->
     <div class="bookshelf-menu">
+        <img src="https://raw.githubusercontent.com/PablinXD24/GELOTECA/main/Brown_and_White_Circle_Minimalist_Book_Store_Logo_20240821_235817_0000-removebg-preview.png" alt="Logo" class="logo"> <!-- Logo no canto superior esquerdo -->
         <ul>
             <li class="book"><a href="#home"><i class="fas fa-book"></i> Página inicial</a></li>
             <li class="book"><a href="#about"><i class="fas fa-book"></i> História</a></li>
@@ -27,7 +28,6 @@
 
     <!-- Slideshow -->
     <div class="slideshow-container">
-        <!-- Adicionei quatro novos slides -->
         <div class="slide fade">
             <img src="https://dmp5lmf6xm59p.cloudfront.net/78727/uuWBRaBznAzxHjzJYpIKt6h2bvPAsh-metaV2hhdHNBcHAgSW1hZ2UgMjAyMy0wOC0xMCBhdCAxNC4xOS4yNi5qcGVn-.jpg" alt="Slide 1">
         </div>
@@ -62,19 +62,22 @@
     <div class="sections-container">
         <div class="section-row">
             <div class="section home-section" id="home">
-                <div class="scroll-animation"><span>Página inicial
-                  </span></div>
+                <h2>Página inicial</h2>
+                <p>Texto para a página inicial.</p>
             </div>
             <div class="section about-section" id="about">
-                <div class="scroll-animation"><span>Nossa história!</span></div>
+                <h2>Nossa história!</h2>
+                <p>Texto sobre a nossa história.</p>
             </div>
         </div>
         <div class="section-row">
             <div class="section services-section" id="services">
-                A nossa equipe!
+                <h2>A nossa equipe!</h2>
+                <p>Texto sobre a equipe.</p>
             </div>
             <div class="section contact-section" id="contact">
-                Dúvidas frequentes...
+                <h2>Dúvidas frequentes...</h2>
+                <p>Texto sobre as dúvidas frequentes.</p>
             </div>
         </div>
     </div>
@@ -88,6 +91,22 @@
     <footer class="footer">
         <p>&copy; 2024 GeloTeCa. Todos os direitos reservados. | <a href="#home">Página inicial</a> | <a href="#about">História</a> | <a href="#services">Equipe</a> | <a href="#contact">Dúvidas frequentes</a></p>
     </footer>
+
+    <!-- Logo Carousel -->
+    <!-- Carrossel de logos abaixo do footer -->
+<div class="logo-carousel">
+    <div class="logo-carousel-inner">
+        <div class="logo-item"><img src="https://raw.githubusercontent.com/PablinXD24/GELOTECA/main/Brown_and_White_Circle_Minimalist_Book_Store_Logo_20240821_235817_0000-removebg-preview.png" alt="Logo 1"></div>
+        <div class="logo-item"><img src="https://raw.githubusercontent.com/PablinXD24/GELOTECA/main/neuron%20logo%20branco%20(1).png" alt="Logo 2"></div>
+        <div class="logo-item"><img src="https://www.eniac.edu.br/hubfs/logos_eniac_centro_universitario_branco-1.png" alt="Logo 3"></div>
+        
+        <!-- Repita os logos para criar um efeito infinito -->
+        <div class="logo-item"><img src="path/to/logo1.png" alt="Logo 1"></div>
+        <div class="logo-item"><img src="path/to/logo2.png" alt="Logo 2"></div>
+        <div class="logo-item"><img src="path/to/logo3.png" alt="Logo 3"></div>
+    </div>
+</div>
+
 
     <script src="script.js"></script>
     <script>
@@ -108,7 +127,7 @@
             }
             slides[slideIndex-1].style.display = "block";
             dots[slideIndex-1].className += " active";
-            setTimeout(showSlides, 4000); // Muda slide a cada 2 segundos
+            setTimeout(showSlides, 4000); // Muda slide a cada 4 segundos
         }
 
         function plusSlides(n) {
@@ -123,6 +142,22 @@
         function scrollToTop() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
+
+        // JavaScript para carrossel de logos
+        let carouselIndex = 0;
+        const carouselImages = document.querySelectorAll('.carousel-container img');
+        const totalImages = carouselImages.length;
+
+        function moveCarousel() {
+            carouselIndex++;
+            if (carouselIndex >= totalImages) {
+                carouselIndex = 0;
+            }
+            document.querySelector('.carousel-container').style.transform = `translateX(-${carouselIndex * 100}%)`;
+            setTimeout(moveCarousel, 3000); // Muda imagem a cada 3 segundos
+        }
+
+        moveCarousel();
     </script>
 </body>
 </html>
