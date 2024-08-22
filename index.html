@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GeloTeCa</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap"> <!-- Fonte Nunito -->
 </head>
 <body>
 
@@ -15,7 +16,7 @@
             <li class="book"><a href="#home"><i class="fas fa-book"></i> Página inicial</a></li>
             <li class="book"><a href="#about"><i class="fas fa-book"></i> História</a></li>
             <li class="book"><a href="#services"><i class="fas fa-book"></i> Equipe</a></li>
-            <li class="book"><a href="#contact"><i class="fas fa-book"></i> Perguntas frequentes</a></li>
+            <li class="book"><a href="#contact"><i class="fas fa-book"></i> Dúvidas frequentes</a></li>
         </ul>
     </div>
 
@@ -26,17 +27,34 @@
 
     <!-- Slideshow -->
     <div class="slideshow-container">
+        <!-- Adicionei quatro novos slides -->
         <div class="slide fade">
             <img src="https://dmp5lmf6xm59p.cloudfront.net/78727/uuWBRaBznAzxHjzJYpIKt6h2bvPAsh-metaV2hhdHNBcHAgSW1hZ2UgMjAyMy0wOC0xMCBhdCAxNC4xOS4yNi5qcGVn-.jpg" alt="Slide 1">
         </div>
         <div class="slide fade">
-            <img src="https://ferrazdevasconcelos.sp.gov.br/web/wp-content/uploads/2022/08/Laura-Ramos-Secom-Ferraz-de-Vasconcelos-6-1-750x500.jpg" alt="Slide 2">
+            <img src="https://ferrazdevasconcelos.sp.gov.br/web/wp-content/uploads/2021/08/Secom-1-750x500.jpg" alt="Slide 2">
+        </div>
+        <div class="slide fade">
+            <img src="https://s2-g1.glbimg.com/usa0pDHAyjCdRPxIOpxgJPEysPU=/0x0:1700x1065/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2018/6/R/3Q8DqARzODt0STtM3rpg/guaia2.jpg" alt="Slide 3">
+        </div>
+        <div class="slide fade">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQr22U_yZ76FKBJswAJaw7ZJZNOm_UbP5mCRQ&s" alt="Slide 4">
+        </div>
+        <div class="slide fade">
+            <img src="https://ferrazdevasconcelos.sp.gov.br/web/wp-content/uploads/2022/01/183e9ef2-af23-49cd-954d-1582ee2c8a73-889x500.jpg" alt="Slide 5">
+        </div>
+        <div class="slide fade">
+            <img src="https://www.mobilize.org.br/midias/noticias/thumb-projeto-quer-promover-a-leitura-entre-usuarios-de-trens1.jpeg" alt="Slide 6">
         </div>
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
         <div class="dots-container">
             <span class="dot" onclick="currentSlide(1)"></span>
             <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
+            <span class="dot" onclick="currentSlide(6)"></span>
         </div>
     </div>
 
@@ -44,32 +62,67 @@
     <div class="sections-container">
         <div class="section-row">
             <div class="section home-section" id="home">
-                <div class="scroll-animation"><span>Projeto Geloteca SP</span></div>
+                <div class="scroll-animation"><span>Página inicial
+                  </span></div>
             </div>
             <div class="section about-section" id="about">
-                <div class="scroll-animation"><span>A nossa história!</span></div>
+                <div class="scroll-animation"><span>Nossa história!</span></div>
             </div>
         </div>
         <div class="section-row">
             <div class="section services-section" id="services">
-                Nossa equipe!
+                A nossa equipe!
             </div>
             <div class="section contact-section" id="contact">
-                Perguntas frequentes...
+                Dúvidas frequentes...
             </div>
         </div>
     </div>
 
     <!-- Scroll to Top Button -->
     <button class="scroll-to-top" onclick="scrollToTop()">
-        <i class="fas fa-book"></i>
+        <i class="fas fa-arrow-up"></i>
     </button>
 
     <!-- Footer -->
     <footer class="footer">
-        <p>&copy; 2024 GeloTeCa. Todos os direitos reservados. | <a href="#home">Home</a> | <a href="#about">About</a> | <a href="#services">Services</a> | <a href="#contact">Contact</a></p>
+        <p>&copy; 2024 GeloTeCa. Todos os direitos reservados. | <a href="#home">Página inicial</a> | <a href="#about">História</a> | <a href="#services">Equipe</a> | <a href="#contact">Dúvidas frequentes</a></p>
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        // JavaScript para animação dos slides
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let slides = document.getElementsByClassName("slide");
+            let dots = document.getElementsByClassName("dot");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+            setTimeout(showSlides, 4000); // Muda slide a cada 2 segundos
+        }
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        // JavaScript para rolar para o topo
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
 </body>
 </html>
