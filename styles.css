@@ -337,18 +337,18 @@ body::after {
 
 .logo-carousel-inner {
     display: flex;
-    width: 400%; /* Ajuste para a quantidade de logos e espaço entre eles */
+    width: 100%; /* Ajuste para a quantidade de logos e espaço entre eles */
     animation: slide 20s linear infinite;
 }
 
 .logo-item {
-    flex: 1 0 25%; /* Ajusta o item para ocupar 25% da largura do carrossel */
-    box-sizing: border-box; /* Inclui padding e border no tamanho total */
-    padding: 0 10px; /* Espaçamento entre logos */
+    flex:  200%; /* Ajusta o item para ocupar 25% da largura do carrossel */
+    box-sizing: ; /* Inclui padding e border no tamanho total */
+    padding: ; /* Espaçamento entre logos */
 }
 
 .logo-carousel img {
-    width: 10%;
+    width: 200px;
     height: auto;
     display: block;
 }
@@ -356,10 +356,50 @@ body::after {
 /* Animação do carrossel infinito */
 @keyframes slide {
     0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); } /* Ajustado para o carrossel */
+    100% { transform: translateX(-100%); } /* Ajustado para o carrossel */
 }
 
 /* Estilo do conteúdo abaixo do footer (para criar espaço para o carrossel) */
 .footer + .logo-carousel {
     margin-top: 20px; /* Espaçamento entre o footer e o carrossel */
+}
+/* Adicione isso ao seu arquivo styles.css */
+
+/* Estilo para a nova aba do mapa */
+.bookshelf-menu li.book a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.bookshelf-menu li.book a i {
+    margin-right: 8px;
+}
+
+/* Estilo para a seção do mapa */
+.map-section {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.map-section h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.map-section p {
+    font-size: 16px;
+}
+/* Estilos adicionais para o mapa */
+#map {
+    height: 600px;
+    width: 100%;
+    max-width: 1000px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.map-container {
+    margin: 20px 0;
 }
